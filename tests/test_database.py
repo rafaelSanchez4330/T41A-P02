@@ -17,7 +17,7 @@ def test_alumnos_insertados(db_connection):
     with db_connection.cursor() as cur:
         cur.execute("SELECT COUNT(*) FROM estudiante;")
         count = cur.fetchone()[0]
-        assert count == 10
+        assert count == 50
 
 def test_maestros_insertados(db_connection):
     with db_connection.cursor() as cur:
@@ -29,19 +29,19 @@ def test_grupos_insertados(db_connection):
     with db_connection.cursor() as cur:
         cur.execute("SELECT COUNT(*) FROM grupo;")
         count = cur.fetchone()[0]
-        assert count == 10
+        assert count == 4
 
 def test_inscripciones_insertados(db_connection):
     with db_connection.cursor() as cur:
         cur.execute("SELECT COUNT(*) FROM inscripcion;")
         count = cur.fetchone()[0]
-        assert count == 10  
+        assert count == 15  
 
 def test_asistencia_insertados(db_connection):
     with db_connection.cursor() as cur:
         cur.execute("SELECT COUNT(*) FROM asistencia;")
         count = cur.fetchone()[0]
-        assert count == 10  
+        assert count == 30  
 
 def test_structure(db_connection):
     sql = ''' 
